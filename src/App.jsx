@@ -14,73 +14,43 @@ function App() {
             <img src={logo} alt="logo" srcset="" />
           </div>
           <div className="text">
-            <h1 className="title">
-              Aunty Adélàjà – The Essence of Timeless Elegance
-            </h1>
-            {/* <p className="text">
-              Aunty Adélàjà is a luxury fashion house specializing in bespoke,
-              bridal, and couture designs. Merging tradition with innovation, we
-              craft elegant, tailored pieces with premium fabrics and impeccable
-              detail.
-            </p>
-            <ul>
-              <li>
-                <b>Couture & Bridal</b> – Exquisite gowns and statement designs
-              </li>
-              <li>
-                <b>Bespoke Creations</b> – Tailored perfection for any occasion
-              </li>
-              <li>
-                <b>Ready-to-Wear</b> – Effortless everyday elegance
-              </li>
-              <li>
-                <b>Luxury Accessories</b> – Finishing touches that elevate your
-                style
-              </li>
-            </ul> */}
             <div className="grid-container">
-              <b className="grid-item">Couture & Bridal</b>
-              <b className="grid-item">Bespoke Creations</b>
-              <b className="grid-item">Ready-to-Wear</b>
-              <b className="grid-item">Luxury Accessories</b>
-            </div>
-
-            <div className="h2">Our Socials</div>
-            <div className="links">
-              <button className="ig">
+              <button
+                className="ig grid-item"
+                onClick={() =>
+                  (window.location.href =
+                    "https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fauntyadelaja_official%2F&is_from_rle")
+                }
+              >
                 <img src={ig} className="social-logo" alt="Instagram" />
-                <a
-                  href="https://www.instagram.com/auntyadelaja_official/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  AUNTY ADÉLÀJÀ
-                </a>
               </button>
-              <button className="snap">
+              <button
+                className="snap grid-item"
+                onClick={() =>
+                  (window.location.href =
+                    "https://www.snapchat.com/add/adelaja_olamide")
+                }
+              >
                 <img src={snap} className="social-logo" alt="Snapchat" />
-                <a
-                  href="https://www.snapchat.com/add/adelaja_olamide"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  ADÉLÀJÀ OLAMIDE
-                </a>
               </button>
-              <button className="wa">
+
+              <button
+                className="wa grid-item"
+                onClick={() =>
+                  (window.location.href =
+                    "https://api.whatsapp.com/send/?phone=09072095067&text&type=phone_number&app_absent=0")
+                }
+              >
                 <img src={whatsapp} className="social-logo" alt="WhatsApp" />
-                <a
-                  href="https://wa.me/09072095067"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  09072095067
-                </a>
               </button>
             </div>
           </div>
         </div>
       </div>
+      <div className="left">
+        <h1 className="titles">The Essence of Timeless Elegance</h1>
+      </div>
+      <img className="f-img" src={logo} />
     </div>
   );
 }
