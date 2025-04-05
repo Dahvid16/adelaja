@@ -19,7 +19,7 @@ function App() {
                 className="ig grid-item"
                 onClick={() =>
                   (window.location.href =
-                    "https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fauntyadelaja_official%2F&is_from_rle")
+                    "https://www.instagram.com/auntyadelaja_official/#")
                 }
               >
                 <img src={ig} className="social-logo" alt="Instagram" />
@@ -27,8 +27,7 @@ function App() {
               <button
                 className="snap grid-item"
                 onClick={() =>
-                  (window.location.href =
-                    "https://www.snapchat.com/add/adelaja_olamide")
+                  (window.location.href = "https://snapchat.com/t/CR9lUtfn")
                 }
               >
                 <img src={snap} className="social-logo" alt="Snapchat" />
@@ -38,7 +37,7 @@ function App() {
                 className="wa grid-item"
                 onClick={() =>
                   (window.location.href =
-                    "https://api.whatsapp.com/send/?phone=09072095067&text&type=phone_number&app_absent=0")
+                    "https://wa.me/message/3VTNHLNIYESRL1")
                 }
               >
                 <img src={whatsapp} className="social-logo" alt="WhatsApp" />
