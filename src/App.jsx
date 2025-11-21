@@ -1,56 +1,14 @@
 import "./App.css";
-import logo from "./assets/main.png";
-import ig from "./assets/ig.png";
-import snap from "./assets/snap.png";
-import whatsapp from "./assets/whatsapp.png";
-import img from "./assets/laja.jpeg";
+import NavBar from "./Component/NavBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="main-body">
-      <div className="card">
-        <div className="right">
-          <div className="logo">
-            <img src={logo} alt="logo" srcset="" />
-          </div>
-          <div className="text">
-            <div className="grid-container">
-              <button
-                className="ig grid-item"
-                onClick={() =>
-                  (window.location.href =
-                    "https://www.instagram.com/auntyadelaja_official/#")
-                }
-              >
-                <img src={ig} className="social-logo" alt="Instagram" />
-              </button>
-              <button
-                className="snap grid-item"
-                onClick={() =>
-                  (window.location.href = "https://snapchat.com/t/CR9lUtfn")
-                }
-              >
-                <img src={snap} className="social-logo" alt="Snapchat" />
-              </button>
-
-              <button
-                className="wa grid-item"
-                onClick={() =>
-                  (window.location.href =
-                    "https://wa.me/message/3VTNHLNIYESRL1")
-                }
-              >
-                <img src={whatsapp} className="social-logo" alt="WhatsApp" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="left">
-        <h1 className="titles">The Essence of Timeless Elegance</h1>
-      </div>
-      <img className="f-img" src={logo} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<NavBar/>}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
