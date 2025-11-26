@@ -1,19 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="#" />
-    <meta name="theme-color" content="#333" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aunty Adélàjà – The Essence of Timeless Elegance</title>
+    <title>
+      Aunty Adélàjà – The Essence of Timeless Elegance
+    </title>
+    <meta name="description" content="Discover BrandName: A fusion of futuristic couture and monochrome aesthetics. Explore our latest avant-garde collections and bespoke designs." />
+    <meta name="keywords" content="fashion, couture, futuristic, monochrome, avant-garde, luxury design" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.brandname.com/" />
+    <meta property="og:title" content="BrandName — Futuristic Couture" />
+    <meta property="og:description" content="Discover BrandName: A fusion of futuristic couture and monochrome aesthetics." />
+    <meta property="og:image" content="https://picsum.photos/1200/630" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.brandname.com/" />
+    <meta property="twitter:title" content="BrandName — Futuristic Couture" />
+    <meta property="twitter:description" content="Discover BrandName: A fusion of futuristic couture and monochrome aesthetics." />
+    <meta property="twitter:image" content="https://picsum.photos/1200/630" />
+
+    <!-- Tailwind CSS -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              brand: {
+                black: '#0a0a0a',
+                dark: '#1a1a1a',
+                gray: '#2a2a2a',
+                light: '#f4f4f5',
+                white: '#ffffff',
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out',
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD for LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FashionDesigner",
+        "name": "BrandName",
+        "image": "https://picsum.photos/800/800",
+        "@id": "https://brandname.com",
+        "url": "https://brandname.com",
+        "telephone": "+15551234567",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Fashion Ave",
+          "addressLocality": "City",
+          "addressCountry": "Country"
+        },
+        "sameAs": [
+          "https://www.facebook.com/brandname",
+          "https://www.instagram.com/brandname",
+          "https://www.twitter.com/brandname"
+        ]
+      }
+    </script>
+
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-brand-black text-brand-light antialiased selection:bg-white selection:text-black">
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="./src/main.jsx"></script>
   </body>
 </html>
