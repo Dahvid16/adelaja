@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { X, ZoomIn } from 'lucide-react';
-// import { GalleryItem } from '../types';
+import { GalleryItem } from '../types';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
+import { FaTimes } from 'react-icons/fa';
 
 const galleryData = [
 { id: 1, src: 'https://picsum.photos/800/1200?random=1', alt: 'Midnight Silk Gown', title: 'Midnight Void', season: 'SS24', description: 'Hand-draped silk with structured shoulder pads.' },
@@ -34,11 +35,11 @@ const GallerySection = () => {
   }, [closeModal]);
 
   return (
-    <section id="gallery" className="py-24 bg-brand-dark">
+    <section id="gallery" className="py-24 bg-[#1a1a1a]">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl text-white mb-4">The Collection</h2>
-          <div className="w-24 h-1 bg-white mx-auto"></div>
+        <div className="text-center mb-10">
+          <h2 className="font-serif text-5xl text-white mb-3">The Collection</h2>
+          <div className="w-30 h-1 bg-white mx-auto"></div>
         </div>
 
         {/* Masonry-ish Grid */}
@@ -46,14 +47,14 @@ const GallerySection = () => {
           {galleryData.map((item) => (
             <div 
               key={item.id} 
-              className="group relative overflow-hidden cursor-pointer"
+              className="group relative overflow-hidden cursor-pointer rounded-2xl"
               onClick={() => openModal(item)}
               role="button"
               tabIndex={0}
               aria-label={`View details for ${item.title}`}
               onKeyDown={(e) => { if (e.key === 'Enter') openModal(item); }}
             >
-              <div className="aspect-[3/4] overflow-hidden bg-gray-800">
+              <div className="aspect-square overflow-hidden bg-gray-800">
                 <img 
                   src={item.src} 
                   alt={item.alt} 
@@ -66,7 +67,7 @@ const GallerySection = () => {
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <p className="text-xs text-gray-300 tracking-widest uppercase mb-1">{item.season}</p>
                 <h3 className="text-xl text-white font-serif">{item.title}</h3>
-                <ZoomIn className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" />
+                <FaMagnifyingGlass className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" />
               </div>
             </div>
           ))}
@@ -76,17 +77,17 @@ const GallerySection = () => {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+          className="fixed inset-0 z-60 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
           onClick={closeModal} // Click outside to close
           role="dialog"
           aria-modal="true"
         >
           <button 
             onClick={closeModal}
-            className="absolute top-6 right-6 text-white hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-1"
+            className="absolute top-6 right-6 text-white hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-1 cursor-pointer"
             aria-label="Close gallery"
           >
-            <X size={32} />
+            <FaTimes size={30} />
           </button>
 
           <div 
@@ -97,7 +98,7 @@ const GallerySection = () => {
               <img 
                 src={selectedImage.src} 
                 alt={selectedImage.alt} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-br-2xl rounded-tl-2xl" loading='lazy'
               />
             </div>
             <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-left">

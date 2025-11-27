@@ -37,12 +37,12 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-black border-t border-gray-900">
+    <section id="testimonials" className="py-20 bg-black">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center justify-center max-w-4xl mx-auto">
-          <FaQuoteLeft size={48} className="text-gray-700 mb-8" />
+          <FaQuoteLeft size={48} className="text-gray-700 mb-5" />
           
-          <div className="relative w-full overflow-hidden min-h-[300px] flex items-center justify-center">
+          <div className="relative w-full overflow-hidden min-h-[300px] flex items-center justify-center border border-gray-700 rounded-2xl p-5 md:p-8 bg-gray-900/50">
             {testimonials.map((item, index) => (
               <div 
                 key={item.id}
@@ -60,7 +60,7 @@ const Testimonials = () => {
                   <img 
                     src={item.image} 
                     alt={item.name} 
-                    className="w-12 h-12 rounded-full grayscale object-cover border border-gray-700"
+                    className="w-12 h-12 rounded-full grayscale object-cover border border-gray-700" loading='lazy'
                   />
                   <div className="text-left">
                     <p className="text-white font-bold tracking-widest text-sm uppercase">{item.name}</p>
@@ -71,7 +71,7 @@ const Testimonials = () => {
             ))}
           </div>
 
-          <div className="flex gap-4 mt-8">
+          <div className="flex gap-8 mt-8">
             <button 
               onClick={prevSlide}
               className="p-3 border border-gray-700 rounded-full text-gray-400 hover:text-white hover:border-white transition-all focus:outline-none focus:ring-2 focus:ring-white"

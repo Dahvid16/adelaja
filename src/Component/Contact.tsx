@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaArrowRight, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaArrowRight, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,8 +16,12 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
+    // Show success toast immediately
+    toast.success("Message sent successfully!");
+    
+    // Update status and reset form
     setStatus('success');
+    
     setTimeout(() => {
       setStatus('idle');
       setFormData({ name: '', email: '', message: '' });
@@ -24,7 +29,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#1a1a1a]">
+    <section id="contact" className="py-20 bg-[#1a1a1a]">
       <div className="container mx-auto px-6">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -40,17 +45,17 @@ const Contact = () => {
             </p>
             
             <div className="space-y-6">
-              <a href="tel:+15551234567" className="flex items-center gap-4 text-white text-xl hover:text-gray-400 transition-colors group">
-                <span className="p-4 bg-white/5 rounded-full group-hover:bg-white/10 transition-colors">
-                  <FaPhone size={24} />
+              <a href="tel:+2349072095067" className="flex items-center gap-4 text-white text-xl hover:text-gray-400 transition-colors group w-1/2">
+                <span className="p-3 bg-white/5 rounded-full group-hover:bg-white/10 transition-colors">
+                  <FaPhoneAlt size={24} />
                 </span>
-                +1 (555) 123-4567
+                +234 907 209 5067
               </a>
-              <a href="mailto:contact@brandname.com" className="flex items-center gap-4 text-white text-xl hover:text-gray-400 transition-colors group">
+              <a href="mailto:adelajaolamide24@gmail.com" className="flex items-center gap-4 text-white text-xl hover:text-gray-400 transition-colors group w-[60%]">
                 <span className="p-4 bg-white/5 rounded-full group-hover:bg-white/10 transition-colors">
                   <FaEnvelope size={24} />
                 </span>
-                contact@brandname.com
+                adelajaolamide24@gmail.com
               </a>
             </div>
           </div>
@@ -67,7 +72,7 @@ const Contact = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-brand-black border border-gray-800 p-4 text-white focus:outline-none focus:border-white transition-colors"
+                  className="w-full bg-brand-black border border-gray-800 p-4 text-white focus:outline-none focus:border-white transition-colors placeholder:italic"
                   placeholder="John Doe"
                 />
               </div>
@@ -80,7 +85,7 @@ const Contact = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-brand-black border border-gray-800 p-4 text-white focus:outline-none focus:border-white transition-colors"
+                  className="w-full bg-brand-black border border-gray-800 p-4 text-white focus:outline-none focus:border-white transition-colors placeholder:italic"
                   placeholder="john@example.com"
                 />
               </div>
@@ -93,7 +98,7 @@ const Contact = () => {
                   required
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full bg-brand-black border border-gray-800 p-4 text-white focus:outline-none focus:border-white transition-colors"
+                  className="w-full bg-brand-black border border-gray-800 p-4 text-white focus:outline-none focus:border-white transition-colors placeholder:italic"
                   placeholder="Tell us about your needs..."
                 />
               </div>
@@ -101,7 +106,7 @@ const Contact = () => {
               <button 
                 type="submit"
                 disabled={status === 'success'}
-                className="w-full bg-white text-black font-bold uppercase tracking-widest py-4 px-8 hover:bg-gray-300 transition-colors flex justify-center items-center gap-2 disabled:bg-green-500 disabled:text-white"
+                className="w-full bg-white text-black font-bold uppercase tracking-widest py-4 px-8 hover:bg-gray-300 transition-colors flex justify-center items-center gap-2 disabled:bg-gray-500 disabled:text-white"
               >
                 {status === 'success' ? 'Sent Successfully' : (
                   <>Send Message <FaArrowRight size={18} /></>

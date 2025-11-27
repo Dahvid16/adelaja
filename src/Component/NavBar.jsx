@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import Logo from "../assets/Adelaja_Logo_main.png";
 
 const navLinks = [
   { label: 'Home', href: '#hero' },
@@ -14,6 +15,7 @@ const NavBar = () => {
   
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
   
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +23,29 @@ const NavBar = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = navLinks.map((l) => l.href.replace('#', ''));
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // find the entry with the largest intersectionRatio that is intersecting
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveSection(visible.target.id);
+      },
+      { root: null, rootMargin: '0px', threshold: [0.25, 0.5, 0.75] }
+    );
+
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
   
   return (
@@ -33,22 +58,30 @@ const NavBar = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Brand Logo */}
-        <a href="#" className="text-2xl font-serif font-bold tracking-widest text-white hover:text-gray-300 transition-colors">
-          BRANDNAME
+        <a href="#" className="flex items-center gap-1 text-3xl font-serif font-bold tracking-tighter text-white hover:text-gray-300 transition-colors">
+          <picture>
+            <img src={Logo} alt="Adelaja Logo" className='w-10 h-10' />
+          </picture>
+          Aunty Adelaja
         </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm uppercase tracking-widest text-gray-300 hover:text-white transition-colors relative group"
-            >
-              {link.label}
-              <span className="absolute left-0 -bottom-1 w-0 h-px bg-white transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const id = link.href.replace('#', '');
+            const isActive = activeSection === id;
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                aria-current={isActive ? 'page' : undefined}
+                className={`text-sm uppercase tracking-widest transition-colors relative group ${isActive ? 'text-white' : 'text-gray-300 hover:text-white'}`}
+              >
+                {link.label}
+                <span className={`absolute left-0 -bottom-1 ${isActive ? 'w-full' : 'w-0'} h-px bg-white transition-all duration-300 navline`}></span>
+              </a>
+            );
+          })}
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -64,16 +97,20 @@ const NavBar = () => {
       {/* Mobile Nav Overlay */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-black/95 border-b border-white/10 p-6 flex flex-col space-y-4 shadow-2xl">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-lg uppercase tracking-widest text-gray-300 hover:text-white block"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const id = link.href.replace('#', '');
+            const isActive = activeSection === id;
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                className={`text-lg uppercase tracking-widest block ${isActive ? 'text-white' : 'text-gray-200/70 hover:text-white'}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </div>
       )}
     </header>
