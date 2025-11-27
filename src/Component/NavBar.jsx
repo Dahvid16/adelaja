@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Logo from "../assets/Adelaja_Logo_main.png";
+// eslint-disable-next-line no-unused-vars
+import { AnimatePresence, motion } from 'framer-motion';
 
 const navLinks = [
   { label: 'Home', href: '#hero' },
@@ -58,15 +60,23 @@ const NavBar = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-1 text-[1.7rem] md:text-3xl font-serif font-bold tracking-tighter text-white hover:text-gray-300 transition-colors">
+        <motion.a href="#" className="flex items-center gap-1 text-[1.7rem] md:text-3xl font-serif font-bold tracking-tighter text-white hover:text-gray-300 transition-colors"
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        >
           <picture>
             <img src={Logo} alt="Adelaja Logo" className='w-10 h-10' />
           </picture>
           Aunty Adelaja
-        </a>
+        </motion.a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-8">
+        <motion.nav className="hidden md:flex space-x-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        >
           {navLinks.map((link) => {
             const id = link.href.replace('#', '');
             const isActive = activeSection === id;
@@ -82,7 +92,7 @@ const NavBar = () => {
               </a>
             );
           })}
-        </nav>
+        </motion.nav>
 
         {/* Mobile Menu Toggle */}
         <button
@@ -93,10 +103,16 @@ const NavBar = () => {
           {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </div>
-
+      
+      <AnimatePresence>
       {/* Mobile Nav Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-black/95 border-b border-white/10 p-6 flex flex-col space-y-4 shadow-2xl">
+        <motion.div className="md:hidden absolute top-full left-0 w-full bg-black/95 border-b border-white/10 p-6 flex flex-col space-y-4 shadow-2xl"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.3, delay: 0 }}
+        exit={{y: -50, opacity: 0}}
+        >
           {navLinks.map((link) => {
             const id = link.href.replace('#', '');
             const isActive = activeSection === id;
@@ -111,8 +127,9 @@ const NavBar = () => {
               </a>
             );
           })}
-        </div>
+        </motion.div>
       )}
+      </AnimatePresence>
     </header>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaArrowRight, FaPhoneAlt } from 'react-icons/fa';
+import { OnReveal } from '../OnReveal';
 
 const HeroSection = () => {
   return (
@@ -8,17 +9,23 @@ const HeroSection = () => {
       </div>
       
       <div className="container mx-auto px-6 flex flex-col items-center z-10 text-center pt-20 md:pt-32 md:pb-16">
+      <OnReveal>
         <h2 className="text-[12px] md:text-base tracking-[0.3em] text-gray-400 mb-4 md:mb-1 animate-fade-in-up">
           No. 1 TRUSTED BRAND
         </h2>
+        </OnReveal>
+        <OnReveal>
         <h1 className="flex flex-col font-serif text-6xl md:text-7xl lg:text-9xl font-bold text-white mb-8 md:mb-6 tracking-tighter leading-tighter">
           AFRICAN
           <span className="text-transparent bg-clip-text bg-linear-to-r from-white to-gray-600">Elegance</span>
         </h1>
+        </OnReveal>
+        <OnReveal>
         <p className="max-w-xl mx-auto text-gray-300 text-lg mb-10 font-light leading-relaxed animate-fade-in-up delay-200">
           Where heritage meets haute couture. Bespoke silhouettes crafted to celebrate your story and instill confidence by every stitch.
         </p>
-
+        </OnReveal>
+        <OnReveal>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 md:gap-8 animate-fade-in-up delay-300">
           <a 
             href="#contact" 
@@ -36,6 +43,7 @@ const HeroSection = () => {
             Explore Gallery <FaArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
+    </OnReveal>
       </div>
 
       {/* Scroll indicator */}

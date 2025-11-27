@@ -6,7 +6,7 @@ interface Props {
     children: JSX.Element;
 }
 
-export const Reveal = ({ children }: Props) => {
+export const OnReveal = ({ children }: Props) => {
   const ref = useRef(null)
   const inView = useInView(ref, {once: true});
   
@@ -28,12 +28,14 @@ export const Reveal = ({ children }: Props) => {
           },
           visible: {
             opacity: 1, y: 0,
-            transition: {delay: 0.5, duration: 0.6, type: "spring", stiffness: 60}
+            transition: {delay: 0.5, duration: 0.6, type: "spring", stiffness: 100}
           }
         }}
         initial= "hidden"
         animate= {fireAll}
-      >{ children }</motion.div>
+      >
+        { children }
+      </motion.div>
     </div>
   )
 }
