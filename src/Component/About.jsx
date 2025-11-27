@@ -1,16 +1,18 @@
 import React from 'react'
+import { OnReveal } from '../OnReveal'
 
 const About = () => {
   return (
     <section id="about" className="py-24 bg-black">
       <div className="container mx-auto px-6">
+        <OnReveal>
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
           <div className="w-full lg:w-1/2 relative group">
             <div className="absolute -inset-4 border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <picture>
             <img 
-              src="https://picsum.photos/600/600?grayscale" 
+              src="https://picsum.photos/400/400?grayscale" 
               alt="Designer working in studio" 
               className="w-full h-full object-cover grayscale brightness-75 contrast-125"
               loading="lazy"
@@ -44,6 +46,7 @@ const About = () => {
           </div>
 
         </div>
+        </OnReveal>
       </div>
     </section>
   )
