@@ -3,7 +3,7 @@ import { OnReveal } from '../OnReveal'
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-black">
+    <section id="about" className="py-24 px-2 bg-black">
       <div className="container mx-auto px-6">
         <OnReveal>
         <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -24,7 +24,7 @@ const About = () => {
             <h2 className="font-serif text-4xl md:text-[2.9rem] text-white mb-8">
               The Architecture of <span className="italic text-gray-400">Elegance</span>
             </h2>
-            <div className="space-y-6 text-gray-300 font-light text-lg leading-relaxed">
+            <div className="space-y-6 text-gray-300 font-light text-lg leading-relaxed text-justify">
               <p>
                 <span className='text-xl font-semibold italic'>Aunty Adélàjà</span> was founded on a singular principle: that clothing should be an extension of the body's geometry. We strip away the unnecessary, leaving only pure form and function.
               </p>
