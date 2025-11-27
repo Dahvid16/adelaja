@@ -58,7 +58,7 @@ const NavBar = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-1 text-3xl font-serif font-bold tracking-tighter text-white hover:text-gray-300 transition-colors">
+        <a href="#" className="flex items-center gap-1 text-[1.7rem] md:text-3xl font-serif font-bold tracking-tighter text-white hover:text-gray-300 transition-colors">
           <picture>
             <img src={Logo} alt="Adelaja Logo" className='w-10 h-10' />
           </picture>
