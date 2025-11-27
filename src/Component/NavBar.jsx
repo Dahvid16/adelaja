@@ -68,7 +68,7 @@ const NavBar = () => {
           <picture>
             <img src={Logo} alt="Adelaja Logo" className='w-10 h-10' />
           </picture>
-          Aunty Adelaja
+          Aunty Adélàjà
         </motion.a>
 
         {/* Desktop Nav */}

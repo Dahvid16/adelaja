@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { GalleryItem } from '../types';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 import { FaTimes } from 'react-icons/fa';
+import { OnReveal } from '../OnReveal';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const galleryData = [
 { id: 1, src: 'https://picsum.photos/800/1200?random=1', alt: 'Midnight Silk Gown', title: 'Midnight Void', season: 'SS24', description: 'Hand-draped silk with structured shoulder pads.' },
@@ -37,10 +39,12 @@ const GallerySection = () => {
   return (
     <section id="gallery" className="py-24 bg-[#1a1a1a]">
       <div className="container mx-auto px-6">
+        <OnReveal>
         <div className="text-center mb-10">
           <h2 className="font-serif text-5xl text-white mb-3">The Collection</h2>
           <div className="w-30 h-1 bg-white mx-auto"></div>
         </div>
+        </OnReveal>
 
         {/* Masonry-ish Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -54,6 +58,7 @@ const GallerySection = () => {
               aria-label={`View details for ${item.title}`}
               onKeyDown={(e) => { if (e.key === 'Enter') openModal(item); }}
             >
+              <OnReveal>
               <div className="aspect-square overflow-hidden bg-gray-800">
                 <img 
                   src={item.src} 
@@ -62,6 +67,7 @@ const GallerySection = () => {
                   loading="lazy"
                 />
               </div>
+            </OnReveal>
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -74,13 +80,18 @@ const GallerySection = () => {
         </div>
       </div>
 
+      <AnimatePresence>
       {/* Lightbox Modal */}
       {selectedImage && (
-        <div 
+        <motion.div 
           className="fixed inset-0 z-60 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
           onClick={closeModal} // Click outside to close
           role="dialog"
           aria-modal="true"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{delay: 0, duration: 0.4}}
+          exit={{ opacity: 0 }}
         >
           <button 
             onClick={closeModal}
@@ -107,16 +118,20 @@ const GallerySection = () => {
               </span>
               <h3 className="text-3xl md:text-4xl font-serif text-white mb-6">{selectedImage.title}</h3>
               <p className="text-gray-300 font-light leading-relaxed mb-8">{selectedImage.description}</p>
-              <button 
-                className="px-8 py-3 bg-white text-black text-sm uppercase tracking-widest hover:bg-gray-300 transition-colors self-start"
+              <motion.button 
+                className="px-8 py-3 bg-white text-black text-sm uppercase tracking-widest hover:bg-gray-300 transition-colors self-start cursor-pointer"
                 onClick={closeModal}
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Inquire About Piece
-              </button>
+              </motion.button>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
+      </AnimatePresence>
     </section>
   )
 }

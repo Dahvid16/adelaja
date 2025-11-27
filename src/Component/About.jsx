@@ -26,7 +26,7 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-gray-300 font-light text-lg leading-relaxed">
               <p>
-                <span className='text-xl font-semibold italic'>Aunty Adelaja</span> was founded on a singular principle: that clothing should be an extension of the body's geometry. We strip away the unnecessary, leaving only pure form and function.
+                <span className='text-xl font-semibold italic'>Aunty Adélàjà</span> was founded on a singular principle: that clothing should be an extension of the body's geometry. We strip away the unnecessary, leaving only pure form and function.
               </p>
               <p>
                 A Lagos born women's atelier crafting refined, sculptural silhouettes in premium fabrics. We design to empower confidence in every dress, trust through made-to-measure fits for every body shape, and love by turning your story into a singular, bespoke piece. Made-to-order for discerning women in Nigeria and beyond.

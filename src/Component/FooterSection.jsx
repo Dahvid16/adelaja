@@ -14,7 +14,7 @@ const FooterSection = () => {
           </div>
 
           <div>
-            <h4 className="text-white uppercase tracking-widest text-sm mb-4">Location</h4>
+            <h4 className="text-white uppercase tracking-widest text-lg mb-2">Location</h4>
             <address className="text-gray-500 not-italic leading-loose font-[1.2rem]">
               Lagos<br />
               Lagos state, Nigeria<br />
@@ -23,7 +23,7 @@ const FooterSection = () => {
           </div>
 
           <div>
-            <h4 className="text-white uppercase tracking-widest text-sm mb-4">Legal</h4>
+            <h4 className="text-white uppercase tracking-widest text-lg mb-2">Legal</h4>
             <ul className="space-y-4 text-gray-500 font-[1.2rem] text-sm">
               <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>

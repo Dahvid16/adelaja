@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight, FaQuoteLeft } from 'react-icons/fa';
+import { OnReveal } from '../OnReveal'; 
 
 const testimonials = [
   {
     id: 1,
     name: "Elena V.",
     role: "Art Curator",
-    quote: "BrandName's designs aren't just clothes; they are sculptures for the body. The attention to detail is unmatched in the industry.",
+    quote: "Aunty Adélàjà's designs aren't just clothes; they are sculptures for the body. The attention to detail is unmatched in the industry.",
     image: "https://picsum.photos/100/100?random=10"
   },
   {
@@ -41,7 +42,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center justify-center max-w-4xl mx-auto">
           <FaQuoteLeft size={48} className="text-gray-700 mb-5" />
-          
+          <OnReveal>
           <div className="relative w-full overflow-hidden min-h-[300px] flex items-center justify-center border border-gray-700 rounded-2xl p-5 md:p-8 bg-gray-900/50">
             {testimonials.map((item, index) => (
               <div 
@@ -53,7 +54,7 @@ const Testimonials = () => {
                 }`}
                 aria-hidden={index !== currentIndex}
               >
-                <p className="text-xl md:text-3xl text-center font-serif text-white leading-relaxed mb-8 italic">
+                <p className="text-xl md:text-[24px] text-center font-serif text-white leading-relaxed mb-8 italic">
                   "{item.quote}"
                 </p>
                 <div className="flex items-center gap-4">
@@ -70,7 +71,9 @@ const Testimonials = () => {
               </div>
             ))}
           </div>
+          </OnReveal>
 
+          <OnReveal>
           <div className="flex gap-8 mt-8">
             <button 
               onClick={prevSlide}
@@ -87,6 +90,7 @@ const Testimonials = () => {
               <FaChevronRight size={24} />
             </button>
           </div>
+          </OnReveal>
         </div>
       </div>
     </section>

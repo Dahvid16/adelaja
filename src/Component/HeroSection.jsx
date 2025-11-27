@@ -1,6 +1,8 @@
 import React from 'react'
 import { FaArrowRight, FaPhoneAlt } from 'react-icons/fa';
 import { OnReveal } from '../OnReveal';
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   return (
@@ -27,21 +29,27 @@ const HeroSection = () => {
         </OnReveal>
         <OnReveal>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 md:gap-8 animate-fade-in-up delay-300">
-          <a 
+          <motion.a 
             href="#contact" 
             className="group relative px-8 py-4 bg-white text-black font-semibold tracking-widest uppercase overflow-hidden rounded-3xl hover:bg-gray-200 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none"
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             <span className="relative z-10 flex items-center gap-2">
               <FaPhoneAlt size={18} /> Make Enquiry
             </span>
-          </a>
+          </motion.a>
 
-          <a 
+          <motion.a 
             href="#gallery" 
             className="group flex items-center px-6 py-4 gap-2 text-white uppercase tracking-widest border rounded-3xl hover:text-gray-300 transition focus:outline-none focus:underline"
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Explore Gallery <FaArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          </motion.a>
         </div>
     </OnReveal>
       </div>
