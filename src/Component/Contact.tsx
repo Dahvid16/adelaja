@@ -37,11 +37,11 @@ const Contact = () => {
           {/* CTA Side */}
           <div className="flex flex-col justify-center">
             <h2 className="font-serif text-4xl md:text-6xl text-white mb-8">
-              Begin Your <br />
-              <span className="text-gray-500">Metamorphosis</span>
+              Your Story, <br />
+              <span className="text-gray-500">Your Silhouette</span>
             </h2>
             <p className="text-gray-300 mb-12 text-lg font-light">
-              Visit our flagship atelier for a private consultation or reach out to discuss bespoke commissions. Experience the future of couture in person.
+              Reach out to share your vision. Whether you're seeking bespoke African confidence, trust in perfect fit, or a love letter in fabric, we craft singular pieces that celebrate your uniqueness. Let's create something extraordinary, just for you.
             </p>
             
             <div className="space-y-6">

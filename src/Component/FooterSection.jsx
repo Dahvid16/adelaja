@@ -7,7 +7,7 @@ const FooterSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           
           <div className="col-span-1 md:col-span-2">
-            <h3 className="font-serif text-2xl text-white mb-6 tracking-widest">BRANDNAME</h3>
+            <h3 className="font-serif text-2xl text-white mb-6 tracking-widest">Aunty Adelaja</h3>
             <p className="text-gray-500 max-w-sm font-light">
               Futuristic couture for the modern avant-garde. Designed in silence, worn in chaos.
             </p>
