@@ -36,7 +36,7 @@ const Contact = () => {
           
           {/* CTA Side */}
           <div className="flex flex-col justify-center">
-            <h2 className="font-serif text-4xl md:text-6xl text-white mb-8">
+            <h2 className="font-serif text-4xl md:text-6xl text-white mb-8 font-semibold">
               Your Story, <br />
               <span className="text-gray-500">Your Silhouette</span>
             </h2>

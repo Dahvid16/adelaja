@@ -1,4 +1,5 @@
 import React from 'react'
+import Logo from "../assets/Adelaja_Logo_main.png";
 
 const FooterSection = () => {
   return (
@@ -6,9 +7,14 @@ const FooterSection = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           
-          <div className="col-span-1 md:col-span-2">
-            <h3 className="font-serif text-3xl text-white mb-4 tracking-tighter font-semibold">Aunty Adelaja</h3>
-            <p className="text-gray-500 max-w-lg font-light text-lg">
+          <div className="col-span-1 md:col-span-2 text-start">
+            <div className='flex items-center font-serif text-2xl text-white mb-4 gap-2'>
+              <picture>
+                <img src={Logo} alt="Adélàjà Logo" className='w-6 h-6' />
+              </picture>
+            <h3 className="tracking-tighter font-semibold">Aunty Adélàjà</h3>
+            </div>
+            <p className="text-gray-500 md:max-w-lg font-light text-lg text-justify">
               Where heritage meets haute couture. Bespoke silhouettes crafted to celebrate your story and instill confidence by every stitch.
             </p>
           </div>

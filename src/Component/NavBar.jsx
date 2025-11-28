@@ -66,7 +66,7 @@ const NavBar = () => {
         transition={{ duration: 0.7 }}
         >
           <picture>
-            <img src={Logo} alt="Adelaja Logo" className='w-10 h-10' loading='load' />
+            <img src={Logo} alt="Adélàjà Logo" className='w-10 h-10' loading='load' />
           </picture>
           Aunty Adélàjà
         </motion.a>
