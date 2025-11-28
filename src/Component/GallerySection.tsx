@@ -41,7 +41,7 @@ const GallerySection = () => {
       <div className="container mx-auto px-6">
         <OnReveal>
         <div className="text-center mb-10">
-          <h2 className="font-serif text-5xl text-white mb-3">The Collection</h2>
+          <h2 className="font-serif text-5xl text-white mb-3 font-semibold">The Collection</h2>
           <div className="w-30 h-1 bg-white mx-auto"></div>
         </div>
         </OnReveal>

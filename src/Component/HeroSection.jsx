@@ -10,14 +10,14 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0 bg-linear-to-br from-black via-brand-dark to-gray-900">
       </div>
       
-      <div className="container mx-auto px-6 flex flex-col items-center z-10 text-center pt-20 md:pt-32 md:pb-16">
+      <div className="container mx-auto px-6 flex flex-col items-center z-10 text-center pt-16 md:pt-32 md:pb-16">
       <OnReveal>
         <h2 className="text-[12px] md:text-base tracking-[0.3em] text-gray-400 mb-4 md:mb-1 animate-fade-in-up">
           No. 1 TRUSTED BRAND
         </h2>
         </OnReveal>
         <OnReveal>
-        <h1 className="flex flex-col font-serif text-6xl md:text-7xl lg:text-9xl font-bold text-white mb-8 md:mb-6 tracking-tighter leading-tighter">
+        <h1 className="flex flex-col font-serif text-7xl md:text-7xl lg:text-9xl font-bold text-white mb-8 md:mb-6 tracking-tighter leading-tighter">
           AFRICAN
           <span className="text-transparent bg-clip-text bg-linear-to-r from-white to-gray-600">Elegance</span>
         </h1>

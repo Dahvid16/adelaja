@@ -21,7 +21,7 @@ const About = () => {
           </div>
 
           <div className="w-full lg:w-1/2">
-            <h2 className="font-serif text-4xl md:text-[2.9rem] text-white mb-8">
+            <h2 className="font-serif text-[2.35rem] md:text-[2.8rem] text-white mb-6 font-semibold">
               The Architecture of <span className="italic text-gray-400">Elegance</span>
             </h2>
             <div className="space-y-6 text-gray-300 font-light text-lg leading-relaxed text-justify">

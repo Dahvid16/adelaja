@@ -38,8 +38,8 @@ const FooterSection = () => {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-gray-900 text-center text-gray-600 text-xs uppercase tracking-widest">
-          &copy; {new Date().getFullYear()} Aunty Adelaja. All rights reserved.
+        <div className="mt-12 pt-8 border-t border-gray-900 text-center text-gray-600 text-xs uppercase tracking-widest">
+          &copy; {new Date().getFullYear()} Aunty Adélàjà. All rights reserved.
         </div>
       </div>
     </footer>
