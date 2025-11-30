@@ -45,13 +45,13 @@ const Contact = () => {
             </p>
             
             <div className="space-y-6">
-              <a href="tel:+2349072095067" className="flex items-center gap-4 text-white text-xl hover:text-gray-400 transition-colors group w-1/2">
+              <a href="tel:+2349072095067" className="flex items-center gap-4 text-white md:text-xl text-[1.1rem] hover:text-gray-400 transition-colors group w-1/2">
                 <span className="p-3 bg-white/5 rounded-full group-hover:bg-white/10 transition-colors">
                   <FaPhoneAlt size={24} />
                 </span>
                 +234 907 209 5067
               </a>
-              <a href="mailto:adelajaolamide24@gmail.com" className="flex items-center gap-4 text-white text-xl hover:text-gray-400 transition-colors group w-[60%]">
+              <a href="mailto:adelajaolamide24@gmail.com" className="flex items-center gap-4 text-white md:text-xl text-[1.1rem] hover:text-gray-400 transition-colors group w-[60%]">
                 <span className="p-4 bg-white/5 rounded-full group-hover:bg-white/10 transition-colors">
                   <FaEnvelope size={24} />
                 </span>
